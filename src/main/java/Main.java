@@ -1,10 +1,26 @@
+import javax.swing.*;
+import java.awt.*;
+
 /**
  * Created by Олександр on 09.09.2017.
  */
 public class Main {
-    public static void main()
+    public static void main(String args[])
     {
-        Game game = new Game();
-        game.start();
+        showMenu();
+    }
+    public static void showMenu()
+    {
+        EventQueue.invokeLater(()->{
+            MenuFrame menuFrame = new MenuFrame();
+            menuFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            menuFrame.setVisible(true);
+        });
     }
 }
+
+
+
+//class MainFrame extends JFrame{
+
+//}
