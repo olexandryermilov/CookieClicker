@@ -4,6 +4,9 @@ import java.util.ArrayList;
  * Created by Олександр on 09.09.2017.
  */
 public abstract class Building {
+    protected static Building INSTANCE = null;
+
+
     public int getCost() {
         return cost;
     }

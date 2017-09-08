@@ -3,15 +3,15 @@ import java.util.ArrayList;
 /**
  * Created by Олександр on 09.09.2017.
  */
-public class Cursor extends Building{
+public class Grandma extends Building{
     public static Building getInstance() {
-        if(INSTANCE==null)INSTANCE=new Cursor();
+        if(INSTANCE==null)INSTANCE=new Grandma();
         return INSTANCE;
     }
-    private Cursor() {
+    private Grandma() {
         super();
-        cost = 10;
-        cookiesPerSecond = 1;
+        cost = 70;
+        cookiesPerSecond = 5;
         upgrades = new ArrayList<Upgrade>();
         //todo : add upgrades
         amount = 0;
