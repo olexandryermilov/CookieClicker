@@ -13,7 +13,9 @@ public class Main {
     {
         EventQueue.invokeLater(()->{
             MenuFrame menuFrame = new MenuFrame();
-            menuFrame.setVisible(true);
+            //menuFrame.setVisible(true);
+            MainGameFrame mainGameFrame = new MainGameFrame();
+            mainGameFrame.setVisible(true);
         });
     }
 }

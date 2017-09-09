@@ -4,8 +4,13 @@ import java.util.ArrayList;
  * Created by Олександр on 09.09.2017.
  */
 public abstract class Building {
+    private static final double COST_MULTIPLIER = 1.02;
     protected static Building INSTANCE = null;
-
+    public void buyOneBuilding()
+    {
+        this.amount++;
+        this.cost=(int)Math.ceil(this.cost*COST_MULTIPLIER);
+    }
     public int getCost() {
         return cost;
     }
