@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public abstract class Building {
     protected static Building INSTANCE = null;
 
-
     public int getCost() {
         return cost;
     }

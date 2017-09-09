@@ -1,30 +1,42 @@
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by Олександр on 09.09.2017.
  */
 
-public class GameFrame extends JFrame {
-    private static final int DEFAULT_WIDTH=1000;
-    private static final int DEFAULT_HEIGHT=600;
+public abstract class GameFrame extends JFrame {
+
     public GameFrame()
     {
-        setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT);
+        setLocationByPlatform(true);
+        Image img = new ImageIcon("resources/SmallCookie.gif").getImage();//todo: add image
+        setIconImage(img);//todo: add new method setFrameIcon?
     }
+    protected void setFrameSize(int widthDivisor, int heightDivisor)
+    {
+        Toolkit kit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = kit.getScreenSize();
+        setSize(screenSize.width/widthDivisor,screenSize.height/heightDivisor);
+    }
+    public abstract void addButtons();
 }
 class MenuFrame extends GameFrame{
 
-    private static final int MENU_HEIGHT=300;
-    private static final int MENU_WIDTH=400;
+    private static final int WIDTH_DIVISOR = 4;
+    private static final int HEIGHT_DIVISOR=3;
     public MenuFrame()
     {
         super();
-        setSize(MENU_WIDTH,MENU_HEIGHT);
+        setFrameSize(WIDTH_DIVISOR,HEIGHT_DIVISOR);
         setTitle(Game.getTitle());
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        addButtons();
+    }
+    public void addButtons()
+    {
         MenuButton newGame = new MenuButton("Start new game");
         MenuButton loadFromFile = new MenuButton("Load from file");
-        this.add(newGame);
-        this.add(loadFromFile);
     }
 }
 class MenuButton extends JButton
@@ -35,7 +47,7 @@ class MenuButton extends JButton
     {
         super(text);
         this.setSize(BUTTON_WIDTH,BUTTON_HEIGHT);
-        //this.setText(text);
+        this.setText(text);
         //todo:add action
     }
 }

@@ -13,7 +13,6 @@ public class Main {
     {
         EventQueue.invokeLater(()->{
             MenuFrame menuFrame = new MenuFrame();
-            menuFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             menuFrame.setVisible(true);
         });
     }
