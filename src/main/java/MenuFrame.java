@@ -46,7 +46,16 @@ public class MenuFrame extends GameFrame{
             public void actionPerformed(ActionEvent e) {
                 Main.hideMenu();
                 Main.showMainFrame();
-                Game game = new Game();
+                Main.game = new Game();
+            }
+        });
+        loadFromFile.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.hideMenu();
+                Main.showMainFrame();
+                Main.game = new Game();
+                Main.game.loadFromFile("resources/save.txt");
             }
         });
     }
