@@ -30,8 +30,8 @@ public class MainGameFrame extends GameFrame
         public BigCookieButton()
         {
             super();
-            this.setSize(BUTTON_WIDTH,BUTTON_HEIGHT);
-            //this.setIcon(new ImageIcon("resources/"));
+            //this.setSize(BUTTON_WIDTH,BUTTON_HEIGHT);
+            this.setIcon(new ImageIcon("resources/CookieButton.png"));
         }
     }
     private static final int WIDTH_DIVISOR=2;
@@ -62,15 +62,18 @@ public class MainGameFrame extends GameFrame
         });
         add(cookiePanel);
     }
-    private void updateCookieLabel()
+    private String generateCookieLabelText()
     {
-        //cookiePanel.remove(cookieLabel);
         Integer amountOfCookies = Main.game.getAmountOfCookies();
         StringBuilder labelText =new StringBuilder();
         labelText.append(amountOfCookies.toString());
         labelText.append(" cookie");
         if(amountOfCookies%10!=1)labelText.append("s");
-        cookieLabel.setText(new String(labelText));
+        return new String(labelText);
+    }
+    private void updateCookieLabel()
+    {
+        cookieLabel.setText(generateCookieLabelText());
         cookiePanel.add(cookieLabel);
     }
     protected void addLabels()
