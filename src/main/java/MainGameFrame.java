@@ -3,6 +3,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 /**
  * Created by Олександр on 12.09.2017.
@@ -40,7 +42,8 @@ public class MainGameFrame extends GameFrame
     {
         super(WIDTH_DIVISOR,HEIGHT_DIVISOR);
         addComponents();
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//todo: add operation
+        //setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//todo: add operation
+
         Main.game.startNewGame();
     }
     public void addComponents()
@@ -68,7 +71,7 @@ public class MainGameFrame extends GameFrame
         StringBuilder labelText =new StringBuilder();
         labelText.append(amountOfCookies.toString());
         labelText.append(" cookie");
-        if(amountOfCookies%10!=1)labelText.append("s");
+        if(amountOfCookies%10!=1||amountOfCookies%100==11)labelText.append("s");
         return new String(labelText);
     }
     private void updateCookieLabel()

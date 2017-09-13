@@ -1,0 +1,5 @@
+1
+1
+0
+{"cost":10,"amount":0,"cookiesPerSecond":1,"upgrades":[]}
+{"cost":10,"amount":0,"cookiesPerSecond":1,"upgrades":[]}

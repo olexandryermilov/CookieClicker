@@ -6,7 +6,7 @@ import java.awt.*;
  */
 
 public abstract class GameFrame extends JFrame {
-
+    protected final String TITLE = "Cookie Clicker v0.01";
     private final int WIDTH_DIVISOR;
     private final int HEIGHT_DIVISOR;
     public GameFrame(int width, int height)
@@ -15,7 +15,7 @@ public abstract class GameFrame extends JFrame {
         HEIGHT_DIVISOR=height;
         setFrameSize(WIDTH_DIVISOR,HEIGHT_DIVISOR);
         setLocationByPlatform(true);
-        setTitle(Main.game.getTitle());
+        setTitle(TITLE);
     }
     private void setFrameIcon()
     {
